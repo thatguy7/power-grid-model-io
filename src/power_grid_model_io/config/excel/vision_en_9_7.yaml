@@ -183,11 +183,11 @@ grid:
       winding_from:
         power_grid_model_io.functions.phase_to_phase.get_winding_from:
           conn_str: Connection
-          neutral_grounding: N1
+          neutral_grounding: Grounding1
       winding_to:
         power_grid_model_io.functions.phase_to_phase.get_winding_to:
           conn_str: Connection
-          neutral_grounding: N2
+          neutral_grounding: Grounding2
       clock:
         power_grid_model_io.functions.phase_to_phase.get_clock:
           conn_str: Connection
@@ -405,7 +405,7 @@ grid:
             - Node.Number
             - Subnumber
       status: Switch state
-      type: Behaviour
+      type: Load.Behaviour
       p_specified:
         multiply:
           - Load.P
@@ -762,15 +762,15 @@ grid:
       winding_1:
         power_grid_model_io.functions.phase_to_phase.get_winding_1:
           conn_str: Connection
-          neutral_grounding: N1
+          neutral_grounding: Grounding1
       winding_2:
         power_grid_model_io.functions.phase_to_phase.get_winding_2:
           conn_str: Connection
-          neutral_grounding: N2
+          neutral_grounding: Grounding2
       winding_3:
         power_grid_model_io.functions.phase_to_phase.get_winding_2:
           conn_str: Connection
-          neutral_grounding: N3
+          neutral_grounding: Grounding3
       clock_12:
         power_grid_model_io.functions.phase_to_phase.get_clock_12:
           conn_str: Connection
@@ -830,22 +830,22 @@ substitutions:
     "off": 0
     "in": 1
     "on": 1
-  N1:
+  Grounding1:
     0: false
     1: true
     none: false
     own: true
-  N2:
+  Grounding2:
     0: false
     1: true
     none: false
     own: true
-  N3:
+  Grounding3:
     0: false
     1: true
     none: false
     own: true
-  Behaviour:
+  ".*Behaviour":
     Constant admittance: 1
     Constant impedance: 1
     ~Constant current: 2
